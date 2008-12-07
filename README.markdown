@@ -1,0 +1,7 @@
+=	Account Graph
+
+Paste in transaction history from your bank account and tag each transaction to get a graph of where the money goes. Small Sinatra application using sqlite, jquery and flot for charting.
+
+- Transaction format
+
+Accepted format is tabbed seperated text, with this fields Reported on, Transferred on, Verification, Text, Amount, Balance
