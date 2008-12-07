@@ -1,0 +1,9 @@
+<form action='/transactions/<%= params[:id] %>' method='post'>
+	<input type="hidden" name="_method" value="put" id="put">
+	<select class='tags' name='tag'>
+		<option value='add_tag'>Add tag...</option>
+	<% for tag in @tags %>
+		<option value='<%= tag %>' <%= 'selected' if @current_tag == tag %>><%= tag %></option>
+	<% end %>
+	</select>
+</form>

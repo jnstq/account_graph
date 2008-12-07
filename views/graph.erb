@@ -1,0 +1,22 @@
+<h2>Account Graph <span class="dark" id="graph_date"></span></h2>
+  
+<form action='/graph.json' medhod='post'>
+	<input type="hidden" name="_method" value="get">
+	<p>
+	<select name="date" id="date">
+		<option value='<%= @dates.first() %>'>Select month</option>
+		<% for d in @dates %>
+		<option value="<%= d %>"><%= d %></option>
+		<% end %>
+	</select>
+	</p>
+</form>
+
+<div id="placeholder" style="width:750px;height:400px"></div>
+
+<h2>Transaction Data <span class="dark" id='graph_tag'></span></h2>
+<p>
+<div id="transactions"></div>
+</p>
+
+

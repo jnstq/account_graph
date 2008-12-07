@@ -1,0 +1,34 @@
+<table style='width:100%'>
+	<thead>
+		<tr>
+			<th>Reported on</th>
+			<th>Transferred on</th>
+			<th>Verification</th>
+			<th>Text</th>
+			<th>Amount</th>
+			<th>Tag</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for t in @transactions do %>
+			<tr>
+				<td><%= t.reported_on.strftime("%Y-%m-%d") %></td>
+				<td><%= t.transferred_on.strftime("%Y-%m-%d") %></td>
+				<td><%= t.verification %></td>
+				<td><%= t.description %></td>
+				<td><%= t.amount %></td>
+				<td class='tag' id='<%= "transaction_#{t.id}" %>'><span style='display:block;'><%= t.tag.to_s.strip == "" ? '...' : t.tag %></span></td>
+			</tr>
+		<% end %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th><%= @transactions.inject(0.0) {|r, v| r + v.amount.abs } %></th>
+			<th>&nbsp;</th>
+		</tr>		
+	</tfoot>
+</table>

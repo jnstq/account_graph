@@ -1,0 +1,9 @@
+.DS_Store
+db/*.db
+public/contact.html
+public/index.html
+API.txt
+public/twocol_a.html
+public/twocol_b.html
+public/onecol.html
+public/thumbs

@@ -1,0 +1,38 @@
+<h2>Data <span class="dark"></span></h2>
+
+<blockquote>
+<p>
+  Add a tag to each transaction. This will used to generate the graph
+</p>
+</blockquote>
+
+<table style='width:100%'>
+	<thead>
+		<tr>
+			<th>Reported on</th>
+			<th>Transferred on</th>
+			<th>Verification</th>
+			<th>Text</th>
+			<th>Amount</th>
+			<th>Balance</th>
+			<th>Tag</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for t in @transactions do %>
+			<tr>
+				<td><%= t.reported_on.strftime("%Y-%m-%d") %></td>
+				<td><%= t.transferred_on.strftime("%Y-%m-%d") %></td>
+				<td><%= t.verification %></td>
+				<td><%= t.description %></td>
+				<td><%= t.amount %></td>
+				<td><%= t.balance %></td>
+				<td class='tag' id='<%= "transaction_#{t.id}" %>'><span style='display:block;'><%= t.tag.to_s.strip == "" ? '...' : t.tag %></span></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<% 1.upto(Transaction.count / Transaction::page_size) do |page|  %>
+	<span class="<%= 'active' if @current_page == page %>"><a href="/data?page=<%= page %>"><%= page %></a></span>
+<% end %>

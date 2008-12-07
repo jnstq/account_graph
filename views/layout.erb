@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>AccountGraph</title>
+  <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/html.css" media="screen, projection, tv " />
+  <!--[if IE]><script language="javascript" type="text/javascript" src="/javascripts/excanvas.pack.js"></script><![endif]-->
+  <script language="javascript" type="text/javascript" src="/javascripts/jquery.js"></script>
+  <script language="javascript" type="text/javascript" src="/javascripts/jquery.flot.js"></script>
+  <script language="javascript" type="text/javascript" src="/javascripts/application.js?<%= Time.now.to_i  %>"></script>
+</head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="/graph">Graph</a></li>
+     	<li><a href="/import">Import</a></li>
+      <li><a href="/data" class="last">Data</a></li>
+    </ul>
+
+  </div>
+  <!-- #header end -->
+
+
+
+
+
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Single column -->
+    <div class="floatLeft width100">
+	
+			<%= yield %>
+      
+    </div>
+    <!-- Single column end -->
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="">Design inspired by</a></li>
+      <li><a href="http://www.studio7designs.com" class="last">studio7designs.com</a></li>
+	 </ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+
+</body>
+
+</html>
